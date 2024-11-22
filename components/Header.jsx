@@ -48,11 +48,12 @@ const Header = () => {
         className={`${styles.heroNav} ${isFixed ? styles.fixme : ""}`}
         style={{
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1442606383395-175ee96ed967?q=80&fm=jpg&s=5c8c74be9bc91b47c79a1aaf92264be5")',
+            'url("https://images.pexels.com/photos/10885433/pexels-photo-10885433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")',
+           
         }}
       >
         <div className={styles.heroNav__inner}>
-          <h1>Neat Title</h1>
+          <h1 style={{ marginLeft:40,}}>Kişisel Bütçe Takip</h1>
           <div className={styles.heroNav__button}>
             <a href="#" className="btn"></a>
           </div>
