@@ -1,66 +1,62 @@
 import { useEffect, useState } from "react";
+import styles from "./Header.module.scss"; // SCSS modülünü bağlama
 
 const Header = () => {
-  const [heroHeight, setHeroHeight] = useState(0);
-  const [isFixed, setIsFixed] = useState(false);
+  const [heroHeight, setHeroHeight] = useState(0); // Hero yüksekliğini takip et
+  const [isFixed, setIsFixed] = useState(false); // Hero'nun sabitlenip sabitlenmediğini kontrol et
 
   useEffect(() => {
-    const updateHeroHeight = () => {
-      const heroElement = document.querySelector(".hero-nav");
-      if (heroElement) {
-        setHeroHeight(heroElement.offsetHeight);
-      }
-    };
+    const heroElement = document.querySelector(`.${styles.heroNav}`);
+    const parentElement = heroElement?.parentElement;
 
-    updateHeroHeight(); // İlk renderda yükseklik ayarla
+    // Hero yüksekliğini hesapla ve parent padding-top'u ayarla
+    const heroHeightValue = heroElement?.offsetHeight || 0;
+    setHeroHeight(heroHeightValue);
+    if (parentElement) {
+      parentElement.style.paddingTop = `${heroHeightValue}px`;
+    }
 
     const handleScroll = () => {
       const scrollOffset = window.scrollY;
-      if (scrollOffset < heroHeight) {
-        // Hero yüksekliği scroll ile azalsın
-        const newHeight = heroHeight - scrollOffset;
-        document.querySelector(".hero-nav").style.height = `${newHeight}px`;
+
+      // Scroll ile hero yüksekliğini küçült
+      if (scrollOffset < heroHeightValue) {
+        heroElement.style.height = `${heroHeightValue - scrollOffset}px`;
       }
-      if (scrollOffset > heroHeight - 215) {
-        setIsFixed(true); // Hero elementini sabitle
+
+      // Sabitleme durumu
+      if (scrollOffset > heroHeightValue - 215) {
+        setIsFixed(true);
       } else {
-        setIsFixed(false); // Hero elementini serbest bırak
+        setIsFixed(false);
       }
     };
 
+    // Scroll eventini bağla
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup: Component unmount olduğunda event listener'ı temizle
+    // Temizlik işlemi
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [heroHeight]);
-  
+  }, [heroHeight]); // Hero yüksekliği değiştiğinde useEffect yeniden çalışır
+
   return (
     <div>
+      {/* Hero Nav */}
       <div
-        className={`hero-nav ${
-          isFixed ? "bg-black bg-opacity-80" : "bg-transparent"
-        } 
-        fixed top-0 right-0 bottom-0 left-0 flex justify-center items-center
-        h-[400px] min-h-[105px] bg-cover bg-center overflow-hidden`}
+        className={`${styles.heroNav} ${isFixed ? styles.fixme : ""}`}
         style={{
           backgroundImage:
             'url("https://images.unsplash.com/photo-1442606383395-175ee96ed967?q=80&fm=jpg&s=5c8c74be9bc91b47c79a1aaf92264be5")',
         }}
       >
-        <div className="hero-nav__inner z-10">
-          <h1 className="text-white text-[5vw]">Neat Title</h1>
-          <div className="hero-nav__button">
+        <div className={styles.heroNav__inner}>
+          <h1>Neat Title</h1>
+          <div className={styles.heroNav__button}>
             <a href="#" className="btn"></a>
           </div>
         </div>
-      </div>
-      <div className="page-content mx-auto w-[30em] leading-7">
-        <p>Laws of physics, billions upon billions...</p>
-        <p>Finite but unbounded...</p>
-        <p>Descended from astronomers...</p>
-        <p>Stirred by starlight...</p>
       </div>
     </div>
   );
