@@ -12,8 +12,23 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-6">
               {/* Bütçe Kartı */}
               <div className="bg-white shadow-lg rounded-lg p-6">
-                <h1 className="text-xl font-medium text-gray-700">Bütçe</h1>
-                <p className="text-4xl font-bold text-blue-500 mt-2">₺5,300</p>
+                <div className="flex justify-between">
+                  <div>
+                    <h1 className="text-xl font-medium text-gray-700">Bütçe</h1>
+                    <p className="text-4xl font-bold text-blue-500 mt-2">
+                      ₺5,300
+                    </p>
+                  </div>
+                  <div>
+                    <h1 className="text-xl font-medium text-gray-700">
+                      Bütçe Limiti
+                    </h1>
+                    <p className="text-4xl font-bold text-blue-500 mt-2">
+                      ₺5,300
+                    </p>
+                  </div>
+                </div>
+
                 <div className="mt-4">
                   <label
                     htmlFor="budget-limit"
@@ -51,7 +66,9 @@ export default function Home() {
 
             {/* Sağ Kart: Gelir/Gider Ekle */}
             <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-medium text-gray-700 mb-4">Gelir/Gider Ekle</h3>
+              <h3 className="text-xl font-medium text-gray-700 mb-4">
+                Gelir/Gider Ekle
+              </h3>
               <form>
                 {/* Kategori Seçimi */}
                 <div className="mb-4">
@@ -130,7 +147,10 @@ export default function Home() {
               <h3 className="text-lg font-medium text-gray-700 mb-4">
                 Harcama Kategorileri
               </h3>
-              <div id="pie-chart" className="h-64 flex items-center justify-center">
+              <div
+                id="pie-chart"
+                className="h-64 flex items-center justify-center"
+              >
                 {/* Chart.js ile Pasta Grafiği Eklenecek */}
               </div>
             </div>
@@ -138,7 +158,10 @@ export default function Home() {
               <h3 className="text-lg font-medium text-gray-700 mb-4">
                 Aylık Trendler
               </h3>
-              <div id="bar-chart" className="h-64 flex items-center justify-center">
+              <div
+                id="bar-chart"
+                className="h-64 flex items-center justify-center"
+              >
                 {/* Chart.js ile Çubuk Grafiği Eklenecek */}
               </div>
             </div>
