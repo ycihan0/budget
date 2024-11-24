@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addTransaction } from "@/redux/transactionsSlice";
 import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid"; 
+import { v4 as uuidv4 } from "uuid";
 
 const AddNewItem = () => {
   const dispatch = useDispatch();
@@ -12,6 +12,8 @@ const AddNewItem = () => {
     amount: "",
     date: "",
   });
+
+  const [errorMessage, setErrorMessage] = useState("");  // Hata mesajı durumu
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -24,22 +26,27 @@ const AddNewItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-  
-    const newTransaction = {
-      id: uuidv4(), 
-      ...formData,
-    };
+    // Form verilerini kontrol et
+    if (!formData.category || !formData.description || !formData.amount || !formData.date) {
+      setErrorMessage("Tüm alanları doldurmanız gerekmektedir!");  // Hata mesajını ayarla
+    } else {
+      const newTransaction = {
+        id: uuidv4(),
+        ...formData,
+      };
 
+      dispatch(addTransaction(newTransaction));
 
-    dispatch(addTransaction(newTransaction));
+      // Formu sıfırla
+      setFormData({
+        category: "Gelir",
+        description: "",
+        amount: "",
+        date: "",
+      });
 
-   
-    setFormData({
-      category: "Gelir",
-      description: "",
-      amount: "",
-      date: "",
-    });
+      setErrorMessage("");  // Hata mesajını temizle
+    }
   };
 
   return (
@@ -116,12 +123,18 @@ const AddNewItem = () => {
           />
         </div>
 
+       
+   
+
         <button
           type="submit"
           className="bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-600 w-full"
         >
           Kaydet
         </button>
+        {errorMessage && (
+          <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+        )}
       </form>
     </div>
   );
