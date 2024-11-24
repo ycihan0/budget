@@ -19,12 +19,13 @@ export default function Home() {
           </div>
           <FinancialTransactions />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <MonthlyBarChart/>
             <YearlyBarChart/>
-            <YearlyPieChart/>
+            
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <MonthlyPieChart/>
-            <MonthlyBarChart/>
+             <YearlyPieChart/>
           </div>
 
           {/* Ayrıntılı Harcama Listesi */}
