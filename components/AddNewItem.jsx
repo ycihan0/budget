@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { addTransaction } from "@/redux/transactionsSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import Swal from "sweetalert2";
 
 const AddNewItem = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const AddNewItem = () => {
     date: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState("");  
+  const [errorMessage, setErrorMessage] = useState("");
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({
@@ -26,10 +27,58 @@ const AddNewItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.category || !formData.description || !formData.amount || !formData.date) {
-      setErrorMessage("Tüm alanları doldurmanız gerekmektedir!");  
-    } else if (formData.category === "Gider" && parseFloat(formData.amount) > budgetLimit) {
-      setErrorMessage(`Bütçe limitinden fazla bir gider kalemi giremezsiniz!`);  
+    if (
+      !formData.category ||
+      !formData.description ||
+      !formData.amount ||
+      !formData.date
+    ) {
+      setErrorMessage("Tüm alanları doldurmanız gerekmektedir!");
+    } else if (
+      formData.category === "Gider" &&
+      parseFloat(formData.amount) > budgetLimit
+    ) {
+      setErrorMessage(`Bütçe limitinden fazla bir gider kalemi giremezsiniz!`);
+    } else if (
+      formData.category === "Gider" &&
+      parseFloat(formData.amount) > budgetLimit * 0.8
+    ) {
+      Swal.fire({
+        title: "Bütçe limitinin yüzde 80'ini aşıyorsunuz!",
+        text: "Devam etmek istiyor musunuz?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Evet, devam et",
+        cancelButtonText: "Hayır, iptal et",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const newTransaction = {
+            id: uuidv4(),
+            ...formData,
+          };
+
+          dispatch(addTransaction(newTransaction));
+
+          setFormData({
+            category: "Gelir",
+            description: "",
+            amount: "",
+            date: "",
+          });
+
+          Swal.fire({
+            icon: "success",
+            title: "Başarıyla Eklendi",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+
+          setErrorMessage("");
+        } else if (result.isDenied) {
+          // Kullanıcı iptal ederse
+          Swal.fire("İşlem iptal edildi", "", "info");
+        }
+      });
     } else {
       const newTransaction = {
         id: uuidv4(),
@@ -38,7 +87,6 @@ const AddNewItem = () => {
 
       dispatch(addTransaction(newTransaction));
 
-      // Formu sıfırla
       setFormData({
         category: "Gelir",
         description: "",
@@ -46,7 +94,14 @@ const AddNewItem = () => {
         date: "",
       });
 
-      setErrorMessage(""); 
+      Swal.fire({
+        icon: "success",
+        title: "Başarıyla Eklendi",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      setErrorMessage("");
     }
   };
 
@@ -123,9 +178,6 @@ const AddNewItem = () => {
             className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
           />
         </div>
-
-       
-   
 
         <button
           type="submit"
