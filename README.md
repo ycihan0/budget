@@ -1,40 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Bütçematik 🤑
 
-## Getting Started
+Kullanıcıların gelir ve giderlerini takip edebileceği bir kişisel bütçe uygulamasıdır. Bu uygulama kullanıcıların gelir ve gider kalemlerinin kayıt altında mali durumlarını daha iyi yönetebilir.
 
-First, run the development server:
+ ## 📸 Ekran Görüntüleri
+![responsive kopya](https://github.com/user-attachments/assets/5e4a2dec-efb5-43ef-993d-30d8410e6306)
+![uyarı](https://github.com/user-attachments/assets/30df4705-017e-4deb-8519-7ee7445391be)
+![uyarı 2](https://github.com/user-attachments/assets/94b253d4-86ed-4d49-8a5a-b7b0d46cc94d)
+!![table](https://github.com/user-attachments/assets/65e8319a-64aa-43d9-a88c-1ce2b5e63eea)
+[validasyonlar](https://github.com/user-attachments/assets/195aa053-e815-45e0-ac18-6c17acc672ff)
+![grafikler](https://github.com/user-attachments/assets/05dd01a4-679b-47af-b3b9-1bde37cca60f)
+![footer](https://github.com/user-attachments/assets/0f13032d-d54d-4fbb-8364-8c03658f3890)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## 🛠 Kullanılan Teknolojiler 
+
+- Next.js (v15.0.3): React tabanlı bir framework olup, sunucu tarafı render (SSR) ve istemci tarafı render (CSR) desteği sağlar. Projenin temelini oluşturur.
+- React (v18.2.0): Kullanıcı arayüzü oluşturmak için kullanılan popüler bir JavaScript kütüphanesi.
+- Tailwind CSS (v3.4.1): Hızlı ve modern bir şekilde responsive, mobil uyumlu ve estetik tasarımlar yapılmasını sağlayan CSS framework’ü.
+- SASS (v1.81.0): CSS’in daha güçlü ve dinamik versiyonu olarak kullanılan bir ön işlemci.
+
+## 🛠 Kullanılan Kütüphaneler 
+
+- @reduxjs/toolkit (v2.3.0): Redux için modern ve basit bir yapı sunarak global state yönetimi sağlar.
+- react-redux (v9.1.2): React uygulamalarında Redux kullanımı için bağlayıcı.
+- uuid (v11.0.3): Unique ID'ler oluşturmak için kullanılan bir kütüphane.
+- sweetalert2 (v11.14.5): Gelişmiş ve şık modal uyarılar göstermek için kullanılır.
+- date-fns (v4.1.0): Tarih işlemleri ve manipülasyonları için kullanılan hafif ve fonksiyonel bir kütüphane.
+- recharts (v2.13.3): Kolay ve özelleştirilebilir grafikler oluşturmak için kullanılan bir kütüphane
+  
+## 🗃️ Veri Depolama
+
+- LocalStorage
+  
+## 🎯 Özellikler
+
+- Gelir ve Gider Ekleme
+- Gider eklerken bütçe limitinin %80’ine ulaşıldığında uyarı verir.
+- Bütçe limitini aşan gider girişlerini engeller.
+- Yapılan son işlemleri görüntüleme
+- Son işlemleri gelir ve gider kategorisine göre filtreleme
+- Aylık ve yıllık gelir/gider analizleri için bar grafik ve pasta grafikler
+- Kullanıcı dostu arayüz ve sade tasarım.
+- Responsive Tasarım
+
+ ## 📂 Proje Yapısı
+ ```csharp
+├── components
+│   ├── AddNewItem.jsx         # Gelir/gider ekleme formu
+│   ├── BudgetDashboard.jsx    # Bütçe özeti ve dashboard
+│   ├── FinancialTransactions.jsx # İşlem tablosu ve finansal hareketler
+│   ├── Header.jsx             # Proje başlığı ve navigasyon
+│   ├── MonthlyBarChart.jsx    # Aylık gelir-gider bar grafiği
+│   ├── MonthlyPieChart.jsx    # Aylık gelir-gider pasta grafiği
+│   ├── YearlyBarChart.jsx     # Yıllık gelir-gider bar grafiği
+│   ├── YearlyPieChart.jsx     # Yıllık gelir-gider pasta grafiği
+├── redux
+│   ├── store.js               # Redux store yapılandırması
+│   ├── transactionsSlice.js   # Finansal işlemlerle ilgili Redux slice
+├── styles
+│   ├── Header.module.scss     # Header bileşeni için SCSS stilleri
+│   ├── global.css             # Uygulama genelinde kullanılan CSS dosyası
+├── data
+│   ├── fakeData.js            
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
