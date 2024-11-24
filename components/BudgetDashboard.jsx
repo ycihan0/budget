@@ -14,7 +14,6 @@ const BudgetDashboard = () => {
 
   return (
     <div className="grid grid-cols-1 gap-6">
-      {/* Bütçe Kartı */}
       <div className="bg-white shadow-lg rounded-lg p-6">
         <div className="flex justify-between">
           <div>

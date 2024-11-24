@@ -1,0 +1,25 @@
+export const fakeData = [
+    { id: "ee7209e6-51d9-4b70-b10b-f01f93d1cd97", category: "Gelir", description: "Maaş", amount: "5000", date: "2024-01-15" },
+    { id: "2e0ff85c-f345-426b-bd89-2c4733ed872f", category: "Gider", description: "Kira", amount: "1500", date: "2024-02-01" },
+    { id: "c2c73099-8c99-46db-a2b2-8c9825e2b11d", category: "Gelir", description: "Yatırım", amount: "2000", date: "2024-02-25" },
+    { id: "49c62a71-59d9-4322-9ec9-3b561fcab45b", category: "Gider", description: "Elektrik Faturası", amount: "300", date: "2024-03-05" },
+    { id: "82df6c73-36b4-4705-8f09-8825f98b7d13", category: "Gelir", description: "Freelance Proje", amount: "1200", date: "2024-03-10" },
+    { id: "71b79c89-71f6-4d6a-85f2-8b184f3873ae", category: "Gider", description: "Su Faturası", amount: "80", date: "2024-04-01" },
+    { id: "5e9bcfe1-9d8b-4d72-8d16-63a8d3bcb4a2", category: "Gider", description: "Alışveriş", amount: "450", date: "2024-04-15" },
+    { id: "47f37c9f-bd5f-4b74-bf99-971306e77d42", category: "Gelir", description: "Bonus", amount: "800", date: "2024-04-18" },
+    { id: "b24e9e64-b5cc-41fd-9a58-40442b9277d5", category: "Gider", description: "Telefon Faturası", amount: "200", date: "2024-05-01" },
+    { id: "c195e288-4976-4ec9-b85f-e1c405c63233", category: "Gelir", description: "Hisse Senedi Kar", amount: "3000", date: "2024-05-05" },
+    { id: "cb5ccfa1-c198-43c4-8429-b8c85c9f63a9", category: "Gider", description: "Araç Masrafları", amount: "600", date: "2024-06-10" },
+    { id: "d9e580fe-1710-4f0b-b5bc-eabb98dcb06a", category: "Gelir", description: "Yatırım Karı", amount: "1500", date: "2024-06-20" },
+    { id: "e7d01ca8-44f6-40db-bb72-c5aaf14fc659", category: "Gider", description: "Yazılım Aracı Aboneliği", amount: "200", date: "2024-07-01" },
+    { id: "c7b85b89-f1d9-4a9d-aabf-6e6d5d7b7b7c", category: "Gelir", description: "Serbest Çalışma Geliri", amount: "3500", date: "2024-07-15" },
+    { id: "bdcb9e8f-35f9-4cde-a8f9-35b0aeedbe4b", category: "Gider", description: "Kredi Kartı Borcu", amount: "1200", date: "2024-08-01" },
+    { id: "23e9cf7c-41bb-4e10-98f3-bfdb36e6e3ba", category: "Gelir", description: "Pasif Gelir", amount: "1000", date: "2024-08-05" },
+    { id: "4974f29a-5101-4a85-a855-5f8501e8a42f", category: "Gider", description: "Eğitim Masrafları", amount: "450", date: "2024-09-10" },
+    { id: "b8fc1c27-dc2d-45a1-a3b9-72759d4eacfd", category: "Gelir", description: "Danışmanlık Geliri", amount: "5000", date: "2024-09-15" },
+    { id: "1ff508cf-8396-421f-a5c4-d3626e978933", category: "Gider", description: "Diyetisyen", amount: "300", date: "2024-10-01" },
+    { id: "34d6f81e-40ca-4cfc-8f8f-fb430244e01f", category: "Gelir", description: "Aylık Yatırım Geliri", amount: "2000", date: "2024-10-05" },
+    { id: "064b67b5-522e-4302-b98f-5cc8ecb45c11", category: "Gider", description: "Sağlık Sigortası", amount: "350", date: "2024-11-01" },
+    { id: "b2bfa3b9-9079-4c3e-92b5-4934bfa7396d", category: "Gelir", description: "Miras", amount: "7000", date: "2024-11-10" }
+  ];
+  

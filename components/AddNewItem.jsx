@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addTransaction } from "@/redux/transactionsSlice";
 import { useDispatch } from "react-redux";
-import { v4 as uuidv4 } from "uuid"; // UUID kütüphanesini içeri aktar
+import { v4 as uuidv4 } from "uuid"; 
 
 const AddNewItem = () => {
   const dispatch = useDispatch();
