@@ -17,12 +17,12 @@ const YearlyBarChart = () => {
   const [yearlyData, setYearlyData] = useState([]);
 
   useEffect(() => {
-    // Veri işleme (Yıllık gelir ve gider)
+   
     const processYearlyData = () => {
       const yearly = {};
 
       transactions.forEach((transaction) => {
-        const year = format(new Date(transaction.date), "yyyy"); // Yıl bazında
+        const year = format(new Date(transaction.date), "yyyy"); 
 
         if (!yearly[year]) yearly[year] = { year, gelir: 0, gider: 0 };
 
@@ -33,7 +33,7 @@ const YearlyBarChart = () => {
         }
       });
 
-      setYearlyData(Object.values(yearly)); // Yıllık verileri dizi haline getiriyoruz
+      setYearlyData(Object.values(yearly)); 
     };
 
     if (transactions.length) {
@@ -43,7 +43,7 @@ const YearlyBarChart = () => {
 
   return (
     <div className="bg-white p-6 shadow-lg rounded-lg">
-      <h3 className="text-lg font-medium text-gray-700 mb-4">Yıllık Grafik</h3>
+      <h3 className="text-lg font-medium text-gray-700 mb-4">Yıllık Para Akışı Çubuk Grafiği</h3>
 
       {yearlyData.length === 0 ? (
         <p className="text-center text-gray-500">Veri bulunamadı.</p>

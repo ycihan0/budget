@@ -3,6 +3,7 @@ import BudgetDashboard from "@/components/BudgetDashboard";
 import FinancialTransactions from "@/components/FinancialTransactions";
 import Header from "@/components/Header";
 import YearlyBarChart from "@/components/YearlyBarChart";
+import YearlyPieChart from "@/components/YearlyPieChart";
 
 export default function Home() {
   return (
@@ -17,17 +18,7 @@ export default function Home() {
           <FinancialTransactions />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <YearlyBarChart/>
-            <div className="bg-white p-6 shadow-lg rounded-lg">
-              <h3 className="text-lg font-medium text-gray-700 mb-4">
-                Aylık Trendler
-              </h3>
-              <div
-                id="bar-chart"
-                className="h-64 flex items-center justify-center"
-              >
-                {/* Chart.js ile Çubuk Grafiği Eklenecek */}
-              </div>
-            </div>
+            <YearlyPieChart/>
           </div>
 
           {/* Ayrıntılı Harcama Listesi */}
