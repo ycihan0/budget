@@ -8,6 +8,7 @@ const BudgetDashboard = () => {
   const dispatch = useDispatch();
   const [newLimit, setNewLimit] = useState(initialBudgetLimit);
   const [isClient, setIsClient] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState("");  
 
   const totalIncome = transactions
     .filter((transaction) => transaction.category === "Gelir")
@@ -26,7 +27,12 @@ const BudgetDashboard = () => {
   };
 
   const handleSaveLimit = () => {
-    dispatch(setBudgetLimit(parseFloat(newLimit)));
+    if (newLimit > totalIncome - totalExpense) {
+      setErrorMessage("Bütçe limiti, mevcut bütçenizden büyük olamaz!");  
+    } else {
+      setErrorMessage("");  
+      dispatch(setBudgetLimit(parseFloat(newLimit)));
+    }
   };
 
   if (!isClient) {
@@ -45,7 +51,7 @@ const BudgetDashboard = () => {
           </div>
           <div>
             <h1 className="text-xl font-medium text-gray-700">Bütçe Limiti</h1>
-            <p className="text-4xl font-bold text-blue-500 mt-2">
+            <p className="text-4xl font-bold text-orange-500 mt-2">
               ₺{initialBudgetLimit.toLocaleString()}
             </p>
           </div>
@@ -73,6 +79,11 @@ const BudgetDashboard = () => {
           >
             Limiti Güncelle
           </button>
+
+          {/* Hata mesajı */}
+          {errorMessage && (
+            <p className="text-red-500 text-sm mt-2">{errorMessage}</p>
+          )}
         </div>
       </div>
 

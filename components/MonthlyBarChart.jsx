@@ -55,7 +55,7 @@ const MonthlyBarChart = () => {
   }, [transactions, currentYear]); 
 
   return (
-    <div className="bg-white p-6 shadow-lg rounded-lg">
+    <div className="bg-white p-6 shadow-lg rounded-lg ">
       <h3 className="text-lg font-medium text-gray-700 mb-4">Aylık Para Akışı Çubuk Grafiği</h3>
 
       {monthlyData.length === 0 ? (

@@ -36,7 +36,7 @@ const Header = () => {
     };
   }, [heroHeight]);
   return (
-    <div>
+    <div className=" relative z-[999] ">
       <div
         className={`${styles.heroNav} ${isFixed ? styles.fixme : ""}`}
         style={{
