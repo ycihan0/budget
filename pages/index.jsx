@@ -1,3 +1,5 @@
+import AddNewItem from "@/components/AddNewItem";
+import BudgetDashboard from "@/components/BudgetDashboard";
 import Header from "@/components/Header";
 
 export default function Home() {
@@ -8,137 +10,8 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-blue-50 to-green-50 p-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Sol Kartlar: Bütçe, Gelir, Gider */}
-            <div className="grid grid-cols-1 gap-6">
-              {/* Bütçe Kartı */}
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <div className="flex justify-between">
-                  <div>
-                    <h1 className="text-xl font-medium text-gray-700">Bütçe</h1>
-                    <p className="text-4xl font-bold text-blue-500 mt-2">
-                      ₺5,300
-                    </p>
-                  </div>
-                  <div>
-                    <h1 className="text-xl font-medium text-gray-700">
-                      Bütçe Limiti
-                    </h1>
-                    <p className="text-4xl font-bold text-blue-500 mt-2">
-                      ₺5,300
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-4">
-                  <label
-                    htmlFor="budget-limit"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Bütçe Limiti
-                  </label>
-                  <input
-                    type="number"
-                    id="budget-limit"
-                    placeholder="₺"
-                    className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                  <button
-                    type="button"
-                    className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg shadow mt-3 hover:bg-blue-600 w-full"
-                  >
-                    Limiti Güncelle
-                  </button>
-                </div>
-              </div>
-
-              {/* Gelir Kartı */}
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <h2 className="text-xl font-medium text-gray-700">Gelir</h2>
-                <p className="text-xl font-bold text-green-500 mt-2">₺12,500</p>
-              </div>
-
-              {/* Gider Kartı */}
-              <div className="bg-white shadow-lg rounded-lg p-6">
-                <h2 className="text-xl font-medium text-gray-700">Gider</h2>
-                <p className="text-xl font-bold text-red-500 mt-2">₺7,200</p>
-              </div>
-            </div>
-
-            {/* Sağ Kart: Gelir/Gider Ekle */}
-            <div className="bg-white shadow-lg rounded-lg p-6">
-              <h3 className="text-xl font-medium text-gray-700 mb-4">
-                Gelir/Gider Ekle
-              </h3>
-              <form>
-                {/* Kategori Seçimi */}
-                <div className="mb-4">
-                  <label
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                    htmlFor="category"
-                  >
-                    Kategori
-                  </label>
-                  <select
-                    id="category"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option>Gelir</option>
-                    <option>Gider</option>
-                  </select>
-                </div>
-                {/* Açıklama */}
-                <div className="mb-4">
-                  <label
-                    htmlFor="description"
-                    className="block text-sm font-medium text-gray-600 mb-2"
-                  >
-                    Açıklama
-                  </label>
-                  <input
-                    type="text"
-                    id="description"
-                    placeholder="Açıklama girin"
-                    className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  />
-                </div>
-                {/* Tutar */}
-                <div className="mb-4">
-                  <label
-                    htmlFor="amount"
-                    className="block text-sm font-medium text-gray-600 mb-2"
-                  >
-                    Tutar
-                  </label>
-                  <input
-                    type="number"
-                    id="amount"
-                    placeholder="₺"
-                    className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400"
-                  />
-                </div>
-                {/* Tarih */}
-                <div className="mb-4">
-                  <label
-                    htmlFor="date"
-                    className="block text-sm font-medium text-gray-600 mb-2"
-                  >
-                    Tarih
-                  </label>
-                  <input
-                    type="date"
-                    id="date"
-                    className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-400"
-                  />
-                </div>
-                {/* Gönder Butonu */}
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-blue-600 w-full"
-                >
-                  Kaydet
-                </button>
-              </form>
-            </div>
+            <BudgetDashboard />
+            <AddNewItem />
           </div>
 
           {/* Grafikler */}
