@@ -2,6 +2,7 @@ import AddNewItem from "@/components/AddNewItem";
 import BudgetDashboard from "@/components/BudgetDashboard";
 import FinancialTransactions from "@/components/FinancialTransactions";
 import Header from "@/components/Header";
+import YearlyBarChart from "@/components/YearlyBarChart";
 
 export default function Home() {
   return (
@@ -13,22 +14,9 @@ export default function Home() {
             <BudgetDashboard />
             <AddNewItem />
           </div>
-          
-            <FinancialTransactions/>
-          
-          {/* Grafikler */}
+          <FinancialTransactions />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="bg-white p-6 shadow-lg rounded-lg">
-              <h3 className="text-lg font-medium text-gray-700 mb-4">
-                Harcama Kategorileri
-              </h3>
-              <div
-                id="pie-chart"
-                className="h-64 flex items-center justify-center"
-              >
-                {/* Chart.js ile Pasta Grafiği Eklenecek */}
-              </div>
-            </div>
+            <YearlyBarChart/>
             <div className="bg-white p-6 shadow-lg rounded-lg">
               <h3 className="text-lg font-medium text-gray-700 mb-4">
                 Aylık Trendler

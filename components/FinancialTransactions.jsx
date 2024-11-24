@@ -87,8 +87,6 @@ const FinancialTransactions = () => {
           </tbody>
         </table>
       </div>
-
-      {/* Sayfalama Kontrolleri */}
       <div className="flex items-center justify-between p-3">
         <p className="block text-sm text-slate-500">
           Sayfa {currentPage} ile {totalPages}
