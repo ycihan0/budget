@@ -1,6 +1,7 @@
 import AddNewItem from "@/components/AddNewItem";
 import BudgetDashboard from "@/components/BudgetDashboard";
 import FinancialTransactions from "@/components/FinancialTransactions";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MonthlyBarChart from "@/components/MonthlyBarChart";
 import MonthlyPieChart from "@/components/MonthlyPieChart";
@@ -28,28 +29,10 @@ export default function Home() {
              <YearlyPieChart/>
           </div>
 
-          {/* Ayrıntılı Harcama Listesi */}
-          <div className="bg-white p-6 shadow-lg rounded-lg mt-8">
-            <h3 className="text-lg font-medium text-gray-700 mb-4">
-              Ayrıntılı Harcamalar
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex justify-between items-center">
-                <span className="text-gray-700">Market Alışverişi</span>
-                <span className="text-red-500 font-medium">-₺350</span>
-              </li>
-              <li className="flex justify-between items-center">
-                <span className="text-gray-700">Elektrik Faturası</span>
-                <span className="text-red-500 font-medium">-₺200</span>
-              </li>
-              <li className="flex justify-between items-center">
-                <span className="text-gray-700">Maaş</span>
-                <span className="text-green-500 font-medium">+₺10,000</span>
-              </li>
-            </ul>
-          </div>
+       
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

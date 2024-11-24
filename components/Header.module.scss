@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Patrick+Hand&family=Poppins:wght@100;300;400;500;600&display=swap');
 
 .heroNav {
   position: fixed;
@@ -20,7 +20,7 @@
   }
 
   h1 {
-    color: #efefef;
+    color: #c06fb9;
     font-size: 5vw;
   }
 
@@ -36,7 +36,7 @@
   }
 
   &.fixme::before {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.8);
   }
 }
 
