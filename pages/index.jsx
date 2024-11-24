@@ -2,6 +2,8 @@ import AddNewItem from "@/components/AddNewItem";
 import BudgetDashboard from "@/components/BudgetDashboard";
 import FinancialTransactions from "@/components/FinancialTransactions";
 import Header from "@/components/Header";
+import MonthlyBarChart from "@/components/MonthlyBarChart";
+import MonthlyPieChart from "@/components/MonthlyPieChart";
 import YearlyBarChart from "@/components/YearlyBarChart";
 import YearlyPieChart from "@/components/YearlyPieChart";
 
@@ -19,6 +21,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <YearlyBarChart/>
             <YearlyPieChart/>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <MonthlyPieChart/>
+            <MonthlyBarChart/>
           </div>
 
           {/* Ayrıntılı Harcama Listesi */}

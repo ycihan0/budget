@@ -8,7 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { format } from "date-fns"; // date-fns ile tarih formatlama
+import { format } from "date-fns"; 
 
 const YearlyPieChart = () => {
   const transactions = useSelector((state) => state.transactions.transactions);
