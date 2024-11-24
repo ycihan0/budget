@@ -13,9 +13,9 @@ export default function Home() {
             <BudgetDashboard />
             <AddNewItem />
           </div>
-          <div className="bg-white p-6 shadow-lg rounded-lg mt-8">
+          
             <FinancialTransactions/>
-          </div>
+          
           {/* Grafikler */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="bg-white p-6 shadow-lg rounded-lg">
