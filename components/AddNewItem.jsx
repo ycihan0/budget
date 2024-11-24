@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { addTransaction } from "@/redux/transactionsSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
 const AddNewItem = () => {
   const dispatch = useDispatch();
+  const budgetLimit = useSelector((state) => state.transactions.budgetLimit);
 
   const [formData, setFormData] = useState({
     category: "Gelir",
@@ -13,8 +14,7 @@ const AddNewItem = () => {
     date: "",
   });
 
-  const [errorMessage, setErrorMessage] = useState("");  // Hata mesajı durumu
-
+  const [errorMessage, setErrorMessage] = useState("");  
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({
@@ -26,9 +26,10 @@ const AddNewItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Form verilerini kontrol et
     if (!formData.category || !formData.description || !formData.amount || !formData.date) {
-      setErrorMessage("Tüm alanları doldurmanız gerekmektedir!");  // Hata mesajını ayarla
+      setErrorMessage("Tüm alanları doldurmanız gerekmektedir!");  
+    } else if (formData.category === "Gider" && parseFloat(formData.amount) > budgetLimit) {
+      setErrorMessage(`Bütçe limitinden fazla bir gider kalemi giremezsiniz!`);  
     } else {
       const newTransaction = {
         id: uuidv4(),
@@ -45,7 +46,7 @@ const AddNewItem = () => {
         date: "",
       });
 
-      setErrorMessage("");  // Hata mesajını temizle
+      setErrorMessage(""); 
     }
   };
 
