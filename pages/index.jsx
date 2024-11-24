@@ -1,19 +1,21 @@
 import AddNewItem from "@/components/AddNewItem";
 import BudgetDashboard from "@/components/BudgetDashboard";
+import FinancialTransactions from "@/components/FinancialTransactions";
 import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Header />
-
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-blue-50 to-green-50 p-4">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <BudgetDashboard />
             <AddNewItem />
           </div>
-
+          <div className="bg-white p-6 shadow-lg rounded-lg mt-8">
+            <FinancialTransactions/>
+          </div>
           {/* Grafikler */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
             <div className="bg-white p-6 shadow-lg rounded-lg">
@@ -62,6 +64,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
