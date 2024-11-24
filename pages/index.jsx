@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-blue-50 to-green-50 p-4">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-blue-50 to-green-50 p-4 relative z-[-1]">
         <div className="max-w-7xl mx-auto mt-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <BudgetDashboard />
