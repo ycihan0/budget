@@ -1,8 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setBudgetLimit } from "@/redux/transactionsSlice";
 
 const BudgetDashboard = () => {
   const transactions = useSelector((state) => state.transactions.transactions);
+  const initialBudgetLimit = useSelector((state) => state.transactions.budgetLimit);
+  const dispatch = useDispatch();
+  const [newLimit, setNewLimit] = useState(initialBudgetLimit);
+  const [isClient, setIsClient] = useState(false); 
 
   const totalIncome = transactions
     .filter((transaction) => transaction.category === "Gelir")
@@ -11,6 +16,22 @@ const BudgetDashboard = () => {
   const totalExpense = transactions
     .filter((transaction) => transaction.category === "Gider")
     .reduce((sum, transaction) => sum + parseFloat(transaction.amount || 0), 0);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const handleLimitChange = (e) => {
+    setNewLimit(e.target.value);
+  };
+
+  const handleSaveLimit = () => {
+    dispatch(setBudgetLimit(parseFloat(newLimit)));
+  };
+
+  if (!isClient) {
+    return null; 
+  }
 
   return (
     <div className="grid grid-cols-1 gap-6">
@@ -24,7 +45,9 @@ const BudgetDashboard = () => {
           </div>
           <div>
             <h1 className="text-xl font-medium text-gray-700">Bütçe Limiti</h1>
-            <p className="text-4xl font-bold text-blue-500 mt-2">₺5,300</p>
+            <p className="text-4xl font-bold text-blue-500 mt-2">
+              ₺{initialBudgetLimit.toLocaleString()}
+            </p>
           </div>
         </div>
 
@@ -38,11 +61,14 @@ const BudgetDashboard = () => {
           <input
             type="number"
             id="budget-limit"
+            value={newLimit}
+            onChange={handleLimitChange}
             placeholder="₺"
             className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <button
             type="button"
+            onClick={handleSaveLimit}
             className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-lg shadow mt-3 hover:bg-blue-600 w-full"
           >
             Limiti Güncelle
