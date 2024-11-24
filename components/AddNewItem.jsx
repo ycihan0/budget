@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addTransaction } from "@/redux/transactionsSlice";
 import { useDispatch } from "react-redux";
+import { v4 as uuidv4 } from "uuid"; // UUID kütüphanesini içeri aktar
 
 const AddNewItem = () => {
   const dispatch = useDispatch();
@@ -23,10 +24,16 @@ const AddNewItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Redux'a veri gönder
-    dispatch(addTransaction(formData));
+  
+    const newTransaction = {
+      id: uuidv4(), 
+      ...formData,
+    };
 
-    // Formu sıfırla
+
+    dispatch(addTransaction(newTransaction));
+
+   
     setFormData({
       category: "Gelir",
       description: "",
