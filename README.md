@@ -2,7 +2,7 @@
 
 Kullanıcıların gelir ve giderlerini takip edebileceği bir kişisel bütçe uygulamasıdır. Bu uygulama kullanıcıların gelir ve gider kalemlerinin kayıt altında mali durumlarını daha iyi yönetebilir.
 
-- Demoyu görmek için tıklayıız👉 https://budget-plum.vercel.app
+- Canlı görmek için tıklayınız👉 https://budget-plum.vercel.app
 
 ## 🛠 Kullanılan Teknolojiler 
 
