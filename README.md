@@ -7,7 +7,7 @@ Kullanıcıların gelir ve giderlerini takip edebileceği bir kişisel bütçe u
 ![uyarı](https://github.com/user-attachments/assets/30df4705-017e-4deb-8519-7ee7445391be)
 ![uyarı 2](https://github.com/user-attachments/assets/94b253d4-86ed-4d49-8a5a-b7b0d46cc94d)
 !![table](https://github.com/user-attachments/assets/65e8319a-64aa-43d9-a88c-1ce2b5e63eea)
-[validasyonlar](https://github.com/user-attachments/assets/195aa053-e815-45e0-ac18-6c17acc672ff)
+![validasyonlar](https://github.com/user-attachments/assets/195aa053-e815-45e0-ac18-6c17acc672ff)
 ![grafikler](https://github.com/user-attachments/assets/05dd01a4-679b-47af-b3b9-1bde37cca60f)
 ![footer](https://github.com/user-attachments/assets/0f13032d-d54d-4fbb-8364-8c03658f3890)
 
