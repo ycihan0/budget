@@ -2,25 +2,14 @@
 
 Kullanıcıların gelir ve giderlerini takip edebileceği bir kişisel bütçe uygulamasıdır. Bu uygulama kullanıcıların gelir ve gider kalemlerinin kayıt altında mali durumlarını daha iyi yönetebilir.
 
-- Click to see the demo👉 https://budget-plum.vercel.app
-
- ## 📸 Ekran Görüntüleri
-![responsive kopya](https://github.com/user-attachments/assets/5e4a2dec-efb5-43ef-993d-30d8410e6306)
-![add](https://github.com/user-attachments/assets/795e2b95-2b60-41a4-a3f3-b7abce4b2ec3)
-![uyarı](https://github.com/user-attachments/assets/30df4705-017e-4deb-8519-7ee7445391be)
-![uyarı 2](https://github.com/user-attachments/assets/94b253d4-86ed-4d49-8a5a-b7b0d46cc94d)
-!![table](https://github.com/user-attachments/assets/65e8319a-64aa-43d9-a88c-1ce2b5e63eea)
-![validasyonlar](https://github.com/user-attachments/assets/195aa053-e815-45e0-ac18-6c17acc672ff)
-![grafikler](https://github.com/user-attachments/assets/05dd01a4-679b-47af-b3b9-1bde37cca60f)
-![footer](https://github.com/user-attachments/assets/0f13032d-d54d-4fbb-8364-8c03658f3890)
-
+- Demoyu görmek için tıklayıız👉 https://budget-plum.vercel.app
 
 ## 🛠 Kullanılan Teknolojiler 
 
-- Next.js (v15.0.3): React tabanlı bir framework olup, sunucu tarafı render (SSR) ve istemci tarafı render (CSR) desteği sağlar. Projenin temelini oluşturur.
-- React (v18.2.0): Kullanıcı arayüzü oluşturmak için kullanılan popüler bir JavaScript kütüphanesi.
-- Tailwind CSS (v3.4.1): Hızlı ve modern bir şekilde responsive, mobil uyumlu ve estetik tasarımlar yapılmasını sağlayan CSS framework’ü.
-- SASS (v1.81.0): CSS’in daha güçlü ve dinamik versiyonu olarak kullanılan bir ön işlemci.
+- Next.js
+- React
+- Tailwind CSS 
+- SASS 
 
 ## 🛠 Kullanılan Kütüphaneler 
 
@@ -66,4 +55,14 @@ Kullanıcıların gelir ve giderlerini takip edebileceği bir kişisel bütçe u
 ├── data
 │   ├── fakeData.js            
 ```
+
+ ## 📸 Ekran Görüntüleri
+![responsive kopya](https://github.com/user-attachments/assets/5e4a2dec-efb5-43ef-993d-30d8410e6306)
+![add](https://github.com/user-attachments/assets/795e2b95-2b60-41a4-a3f3-b7abce4b2ec3)
+![uyarı](https://github.com/user-attachments/assets/30df4705-017e-4deb-8519-7ee7445391be)
+![uyarı 2](https://github.com/user-attachments/assets/94b253d4-86ed-4d49-8a5a-b7b0d46cc94d)
+!![table](https://github.com/user-attachments/assets/65e8319a-64aa-43d9-a88c-1ce2b5e63eea)
+![validasyonlar](https://github.com/user-attachments/assets/195aa053-e815-45e0-ac18-6c17acc672ff)
+![grafikler](https://github.com/user-attachments/assets/05dd01a4-679b-47af-b3b9-1bde37cca60f)
+![footer](https://github.com/user-attachments/assets/0f13032d-d54d-4fbb-8364-8c03658f3890)
 
